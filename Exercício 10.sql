@@ -1,1 +1,1 @@
-select autor_id, count(*) as quantidade_livro from livros group by autor_id;
+select autor_id, count(*) as quant_livro from livros group by autor_id;
