@@ -1,1 +1,1 @@
-select curso, count(*) as quantidade_aluno from matriculas group by curso;
+select curso, count(*) as quant_aluno from matriculas group by curso;
