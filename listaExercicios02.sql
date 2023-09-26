@@ -68,9 +68,9 @@ create procedure sp_AdicionarLivro(in nome_livro varchar(100),in editora_id int,
 begin
 	declare id_livro int default 1;
     declare livro_novo boolean default true;
-    declare titulo_livro varchar(255);
+    declare titulo_livro varchar(300);
     declare quant_livros int;
-    declare mensg_falha varchar(200);
+    declare mensg_falha varchar(100);
     select count(*) into quant_livros from livro;
 	while livro_novo and id_livro <= quant_livros   DO 
 		select Titulo into titulo_livro from livro where Livro_ID = id_livro;
