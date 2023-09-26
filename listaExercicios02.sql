@@ -6,4 +6,3 @@ begin
 end;
 $$
 call sp_ListarAutores();
-$$
