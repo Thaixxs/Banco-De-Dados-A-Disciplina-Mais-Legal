@@ -90,5 +90,12 @@ $$
 call sp_AdicionarLivro('A Hipótese do Amor', 1, 2022, 411, 1);
 
 -- Exercício 08
+create procedure sp_AutorMaisAntigo()
+begin
+	select Nome, Sobrenome from autor order by Data_Nascimento limit 1;
+end;
+$$
+call sp_AutorMaisAntigo()
+
 -- Exercício 09
 -- Exercício 10
