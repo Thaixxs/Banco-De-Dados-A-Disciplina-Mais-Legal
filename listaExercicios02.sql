@@ -95,7 +95,7 @@ begin
 	select Nome, Sobrenome from autor order by Data_Nascimento limit 1;
 end;
 $$
-call sp_AutorMaisAntigo()
+call sp_AutorMaisAntigo();
 
 -- Exercício 09
 -- Exercício 10
