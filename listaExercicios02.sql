@@ -54,7 +54,17 @@ $$
 call sp_LivrosAteAno(2007)
 
 -- Exercício 06
+create procedure sp_TitulosPorCategoria(in nome_categoria varchar(100))
+begin
+	declare id_categoria int;
+    select Categoria_ID into id_categoria from categoria where nome_categoria = nome;
+	select Titulo from livro where Categoria_ID = id_categoria;
+end;
+$$
+call sp_TitulosPorCategoria('Autoajuda');
+
 -- Exercício 07
+
 -- Exercício 08
 -- Exercício 09
 -- Exercício 10
