@@ -106,3 +106,11 @@ $$ -- aqui foi colocado o delimiter definido no inicio do código
 call sp_AutorMaisAntigo(); -- então finalmente chamamos a procedure a serverificada e executada
 
 -- Exercício 10
+create procedure sp_LivrosESeusAutores()
+begin
+	select Titulo, Nome, Sobrenome from livro inner join autor_livro on livro.Livro_ID = autor_livro.Autor_Livro_ID join autor on autor_livro.Autor_ID = autor.Autor_ID;
+end;
+$$
+call sp_LivrosESeusAutores()
+$$
+delimiter ;
