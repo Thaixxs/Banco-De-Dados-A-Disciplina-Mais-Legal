@@ -51,7 +51,7 @@ begin
 	 select Titulo, Ano_Publicacao from livro where Ano_Publicacao <= ano order by Ano_Publicacao;
 end;
 $$
-call sp_LivrosAteAno(2007)
+call sp_LivrosAteAno(2007);
 
 -- Exercício 06
 create procedure sp_TitulosPorCategoria(in nome_categoria varchar(100))
@@ -68,9 +68,9 @@ create procedure sp_AdicionarLivro(in nome_livro varchar(100),in editora_id int,
 begin
 	declare id_livro int default 1;
     declare livro_novo boolean default true;
-    declare titulo_livro varchar(300);
+    declare titulo_livro varchar(255);
     declare quant_livros int;
-    declare mensg_falha varchar(100);
+    declare mensg_falha varchar(200);
     select count(*) into quant_livros from livro;
 	while livro_novo and id_livro <= quant_livros   DO 
 		select Titulo into titulo_livro from livro where Livro_ID = id_livro;
