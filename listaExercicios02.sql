@@ -46,6 +46,13 @@ $$
 call sp_VerificarLivrosCategoria('História');
 
 -- Exercício 05
+create procedure sp_LivrosAteAno(in ano int)
+begin
+	 select Titulo, Ano_Publicacao from livro where Ano_Publicacao <= ano order by Ano_Publicacao;
+end;
+$$
+call sp_LivrosAteAno(2007)
+
 -- Exercício 06
 -- Exercício 07
 -- Exercício 08
