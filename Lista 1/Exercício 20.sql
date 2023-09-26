@@ -1,1 +1,0 @@
-select produto, count(*) as quant_vendido from vendas group by produto; 

@@ -1,1 +1,0 @@
-select produto, avg(receita) as media_receita_total from vendas group by produto;

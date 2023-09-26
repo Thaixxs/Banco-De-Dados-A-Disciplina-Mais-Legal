@@ -1,1 +1,0 @@
-select * from vendas where receita > 10000.00;
