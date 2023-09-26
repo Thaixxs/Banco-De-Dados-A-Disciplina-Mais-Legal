@@ -98,4 +98,11 @@ $$
 call sp_AutorMaisAntigo();
 
 -- Exercício 09
+create procedure sp_AutorMaisAntigo() -- Nessa linha a procedure está sendo criada com base no nome indicado no eclass
+begin -- aqui está sendo colocada a indicação de inicio das condições da procedure
+	select Nome, Sobrenome from autor order by Data_Nascimento limit 1; -- aqui o select é utilizado para filtrar, nome e sobrenome (nesse caso) do autor, ordenando os dados por data de nascimento e limitando a apenas uma resposta
+end; -- aqui está sendo colocada a indicação de fim das condições da procedure
+$$ -- aqui foi colocado o delimiter definido no inicio do código
+call sp_AutorMaisAntigo(); -- então finalmente chamamos a procedure a serverificada e executada
+
 -- Exercício 10
