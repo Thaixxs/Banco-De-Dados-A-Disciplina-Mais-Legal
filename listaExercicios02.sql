@@ -64,6 +64,30 @@ $$
 call sp_TitulosPorCategoria('Autoajuda');
 
 -- Exercício 07
+create procedure sp_AdicionarLivro(in nome_livro varchar(100),in editora_id int, in ano_pub int,in num_pags int , in categoria_id int)
+begin
+	declare id_livro int default 1;
+    declare livro_novo boolean default true;
+    declare titulo_livro varchar(255);
+    declare quant_livros int;
+    declare mensg_falha varchar(200);
+    select count(*) into quant_livros from livro;
+	while livro_novo and id_livro <= quant_livros   DO 
+		select Titulo into titulo_livro from livro where Livro_ID = id_livro;
+        if nome_livro = titulo_livro or editora_id > 2  then
+			set livro_novo = false;
+            set mensg_falha = "Titulo do livro repetido ou ID da editora inserido errado";
+            select mensg_falha;
+		else
+			set id_livro = id_livro + 1;
+		end if;
+	end while;
+    if livro_novo then 
+		insert into livro values(quant_livros + 1 ,nome_livro, editora_id ,  ano_pub , num_pags  ,  categoria_id ) ;
+    end if;
+end;
+$$
+call sp_AdicionarLivro('A Hipótese do Amor', 1, 2022, 411, 1);
 
 -- Exercício 08
 -- Exercício 09
