@@ -1,0 +1,1 @@
+select autor_id from livros where autor_id = autor_id;

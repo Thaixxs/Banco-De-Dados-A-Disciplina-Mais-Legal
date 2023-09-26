@@ -1,0 +1,1 @@
+select curso, count(*) as quant_aluno from matriculas group by curso;

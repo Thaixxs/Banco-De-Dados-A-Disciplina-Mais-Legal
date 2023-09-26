@@ -1,0 +1,1 @@
+select autor_id, count(*) as quant_livro from livros group by autor_id;

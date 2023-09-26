@@ -1,0 +1,1 @@
+select * from alunos inner join matriculas on alunos.id = matriculas.aluno_id;
